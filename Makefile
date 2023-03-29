@@ -28,7 +28,7 @@ make_libft:
 	@make all -C ./libft
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -I $(LIB) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(DEBUG) $(OBJS) -I $(LIB) $(LIBFT) -o $(NAME)
 
 #$(NAME_BONUS): $(OBJS_BONUS)
 #	@$(CC) $(CFLAGS) $(OBJS_BONUS) -I $(LIB_BONUS) $(LIBFT) -o $(NAME_BONUS)
