@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/30 18:20:41 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:40:56 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -29,9 +29,12 @@ typedef struct s_node
 	struct s_node	*next;
 }				t_node;
 
-int			error_found(char *str);
-void		check_doubles(t_node *lst);
-long long	ft_atoi_ps(const char *str);
+t_node		*add_node(t_node *lst, long num);
 void		ft_parsing(char **argv, t_node *lst);
+void		handle_string(char **arr, t_node *aux, long nb);
+long long	ft_atoi_ps(const char *str);
+void		read_list(t_node *lst);
+void		check_doubles(t_node *lst);
+int			error_found(char *str);
 
 #endif
