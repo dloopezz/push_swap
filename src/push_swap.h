@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/30 00:24:59 by lopezz           ###   ########.fr       */
+/*   Updated: 2023/03/30 13:24:23 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <stdlib.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 # include "../libft/libft.h"
 
@@ -32,6 +32,6 @@ typedef struct s_node
 
 
 int	check_args(char *nb);
-
+long long	ft_atoi_ps(const char *str);
 
 #endif

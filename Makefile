@@ -11,6 +11,7 @@ SRC_PATH = ./src/
 #SRC_PATH_BONUS = ./src_bonus/
 
 SRC =	push_swap.c\
+		utils.c\
 
 #SRC_BONUS =	main_bonus.c\
 

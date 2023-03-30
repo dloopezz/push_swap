@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/30 00:30:17 by lopezz           ###   ########.fr       */
+/*   Updated: 2023/03/30 13:17:24 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	check_args(char *nb)
 	{
 		if ((nb[i] <= '0' && nb[i] >= '9') && (nb[i] != '-' || nb[i] != '+' || nb[i] != ' ')) //hay un error aquí (no comprueba bien)
 		{
-			ft_putstr_fd("Invalid arguments\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			return (1);
 		}
 		i++;
@@ -64,14 +64,12 @@ int	main(int argc, char **argv)
 		i = 1;
 		while (argv[i])
 		{
-			if (check_args(argv[i]) == FALSE)
-				return (1);
 			arr = ft_split(argv[i], SPACE);
 			if (!arr[1])
 			{
-				nb = ft_atoi(argv[i]);
+				nb = ft_atoi_ps(argv[i]);
 				lst = add_node(lst, nb);
-				// printf("Node content: %li\n", lst->data);
+				printf("Node content: %li\n", lst->data);
 				lst = lst->next;
 			}
 			else
@@ -79,9 +77,9 @@ int	main(int argc, char **argv)
 				j = 0;
 				while (arr[j])
 				{
-					nb = ft_atoi(arr[j]);
+					nb = ft_atoi_ps(arr[j]);
 					lst = add_node(lst, nb);
-					// printf("Node content: %li\n", lst->data);
+					printf("Node content: %li\n", lst->data);
 					lst = lst->next;
 					j++;
 				}
