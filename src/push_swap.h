@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/30 16:08:03 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:20:41 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@
 
 typedef struct s_node
 {
-	long				data;
+	long			data;
 	struct s_node	*next;
 }				t_node;
 
-
-
-int			check_doubles(t_node *lst);
+int			error_found(char *str);
+void		check_doubles(t_node *lst);
 long long	ft_atoi_ps(const char *str);
-t_node		*ft_parsing(char **argv, t_node *lst);
+void		ft_parsing(char **argv, t_node *lst);
 
 #endif
