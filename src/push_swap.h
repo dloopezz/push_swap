@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/30 21:40:56 by lopezz           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:57:21 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ typedef struct s_node
 	struct s_node	*next;
 }				t_node;
 
-t_node		*add_node(t_node *lst, long num);
-void		ft_parsing(char **argv, t_node *lst);
+t_node		*add_node(t_node *stack_a, long num);
+void		ft_parsing(char **argv, t_node *stack_a);
 void		handle_string(char **arr, t_node *aux, long nb);
 long long	ft_atoi_ps(const char *str);
-void		read_list(t_node *lst);
-void		check_doubles(t_node *lst);
-int			error_found(char *str);
+void		read_list(t_node *stack_a);
+void		check_doubles(t_node *stack_a);
 
 #endif

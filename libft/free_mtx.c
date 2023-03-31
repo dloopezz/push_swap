@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_no_nl.c                                  :+:      :+:    :+:   */
+/*   free_mtx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 14:33:00 by cyacoub-          #+#    #+#             */
-/*   Updated: 2023/02/16 20:54:37 by lopezz           ###   ########.fr       */
+/*   Created: 2023/03/31 16:52:20 by dlopez-s          #+#    #+#             */
+/*   Updated: 2023/03/31 16:53:35 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup_no_nl(char *s)
+void	free_mtx(char **mtx)
 {
-	char	*new_mem;
-	int		size;
-	int		i;
+	int	i;
 
-	new_mem = NULL;
-	size = ft_strlen(s);
 	i = 0;
-	new_mem = malloc(size + 1);
-	if (!(new_mem))
-		return (NULL);
-	while (s[i] && s[i] != '\n')
-	{
-		new_mem[i] = s[i];
-		i++;
-	}
-	new_mem[i] = '\0';
-	return (new_mem);
+	while (mtx[i])
+		free(mtx[i++]);
+	free(mtx);
 }

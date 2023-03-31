@@ -6,19 +6,12 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 12:49:26 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/31 12:28:58 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:31:32 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error_found(char *str)
-{
-	ft_putstr_fd(str, STDERR_FILENO);
-	exit (EXIT_FAILURE);
-}
-
-//problemas con " 3", "3 " o " "
 long long	ft_atoi_ps(const char *str)
 {
 	int			i;
@@ -42,7 +35,7 @@ long long	ft_atoi_ps(const char *str)
 		nb = (str[i++] - '0') + (nb * 10);
 	if ((str[i] < '0' || str[i] > '9') && str[i] && str[i] != SPACE)
 		error_found("Error\n");
-	nb *= sign;
+	nb *= sign; //meter en if de abajo
 	if (nb > INT_MAX || nb < INT_MIN)
 		error_found("Error\n");
 	return (nb);

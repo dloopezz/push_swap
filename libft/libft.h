@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 19:01:23 by cyacoub-          #+#    #+#             */
-/*   Updated: 2023/02/06 13:17:18 by dlopez-s         ###   ########.fr       */
+/*   Created: 2023/03/31 15:24:26 by dlopez-s          #+#    #+#             */
+/*   Updated: 2023/03/31 16:53:42 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ char	*get_next_line(int fd);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*ft_strchr_gnl(char *s, int c);
 
-char	*ft_strdup_no_nl(char *s);
-char	*ft_strjoin_no_nl(char *s1, char *s2);
+void	free_mtx(char **mtx);
+int	error_found(char *str);
 
 #endif
+

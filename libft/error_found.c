@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   error_found.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 21:02:54 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/26 21:13:17 by lopezz           ###   ########.fr       */
+/*   Created: 2023/03/31 16:53:05 by dlopez-s          #+#    #+#             */
+/*   Updated: 2023/03/31 16:53:24 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	error_found(char *str)
 {
-	if (!lst)
-		return ;
-	while (lst)
-	{
-		f (lst -> content);
-		lst = lst -> next;
-	}
+	ft_putstr_fd(str, STDERR_FILENO);
+	exit (EXIT_FAILURE);
 }

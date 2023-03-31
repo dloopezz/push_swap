@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:31:41 by lopezz            #+#    #+#             */
-/*   Updated: 2023/03/30 21:41:46 by lopezz           ###   ########.fr       */
+/*   Updated: 2023/03/31 13:43:04 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_doubles(t_node *lst)
+void	check_doubles(t_node *stack_a)
 {
-	t_node	*aux;
+	t_node	*aux1;
 	t_node	*aux2;
 
-	aux = lst->next->next;
-	while (aux)
+	aux1 = stack_a->next->next;
+	while (aux1)
 	{
-		aux2 = lst->next;
-		while (aux2 != aux && aux2)
+		aux2 = stack_a->next;
+		while (aux2 != aux1 && aux2)
 		{
-			if (aux->data == aux2->data)
+			if (aux1->data == aux2->data)
 				error_found("Error (doubles)\n");
 			aux2 = aux2->next;
 		}
-		aux = aux->next;
+		aux1 = aux1->next;
 	}
 }
 
@@ -45,14 +45,14 @@ void	handle_string(char **arr, t_node *aux, long nb)
 	}
 }
 
-void	ft_parsing(char **argv, t_node *lst)
+void	ft_parsing(char **argv, t_node *stack_a)
 {
 	int		i;
 	long	nb;
 	char	**arr;
 	t_node	*aux;
 
-	aux = lst;
+	aux = stack_a;
 	i = 1;
 	while (argv[i])
 	{
