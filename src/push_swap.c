@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/31 13:42:22 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:42:47 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,20 @@ void	read_list(t_node *stack_a)
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
+	t_node	*stack_b;
 
 	stack_a = ft_calloc(1, sizeof(t_node));
+	stack_b = ft_calloc(1, sizeof(t_node));
 	if (argc > 1)
 	{
 		ft_parsing(argv, stack_a);
 		check_doubles(stack_a);
 		
+		ft_putstr_fd("STACK A:\n", 1);
 		read_list(stack_a);
+		ft_putstr_fd("STACK B:\n", 1);
+		read_list(stack_b);
+
 		return (0);
 	}
 	else
@@ -63,3 +69,11 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 }
+
+/* 		
+SWAP:
+		ft_putstr_fd("BEFORE SWAP:\n", 1);
+		read_list(stack_a);
+		ft_putstr_fd("\nAFTER SWAP:\n", 1);
+		ft_swap(stack_a); 
+*/

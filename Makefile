@@ -13,6 +13,7 @@ SRC_PATH = ./src/
 SRC =	push_swap.c\
 		parsing.c\
 		utils.c\
+		moves.c\
 
 #SRC_BONUS =	main_bonus.c\
 

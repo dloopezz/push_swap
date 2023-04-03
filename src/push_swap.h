@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/31 16:57:21 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:01:22 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void		handle_string(char **arr, t_node *aux, long nb);
 long long	ft_atoi_ps(const char *str);
 void		read_list(t_node *stack_a);
 void		check_doubles(t_node *stack_a);
+
+void		ft_swap(t_node *lst);
 
 #endif
