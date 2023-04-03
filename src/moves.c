@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 16:54:22 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:30:56 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,22 @@ void	ft_swap(t_node *lst)
 void	ft_rotate(t_node *lst)
 {
 	t_node	*aux;
+	t_node	*first;
 	long	swap;
 
- hola	
+	aux = lst;
+	first = lst;
+	lst = lst->next;
+	
+	ft_lstdelone(lst);
+	while (lst->next)
+		lst = lst->next;
+	ft_lstadd_back(lst, first);
+	
+	lst = aux;
 }
+
+/* void	ft_rev_rotate(t_node *lst)
+{
+	
+} */

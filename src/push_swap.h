@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 16:01:22 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:47:06 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void		read_list(t_node *stack_a);
 void		check_doubles(t_node *stack_a);
 
 void		ft_swap(t_node *lst);
+void	ft_rotate(t_node *lst);
 
 #endif

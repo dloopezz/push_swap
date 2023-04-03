@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 16:42:47 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:52:26 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ int	main(int argc, char **argv)
 		ft_parsing(argv, stack_a);
 		check_doubles(stack_a);
 		
-		ft_putstr_fd("STACK A:\n", 1);
+		ft_putstr_fd("BEFORE ROTATE:\n", 1);
 		read_list(stack_a);
-		ft_putstr_fd("STACK B:\n", 1);
-		read_list(stack_b);
+		ft_rotate(stack_a);
+		ft_putstr_fd("\nAFTER ROTATE:\n", 1);
+		read_list(stack_a);
 
 		return (0);
 	}
