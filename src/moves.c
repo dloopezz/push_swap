@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 18:30:56 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:48:54 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,24 @@ void	ft_swap(t_node *lst)
 	lst = aux; //reasignar a primer nodo
 }
 
-void	ft_rotate(t_node *lst)
+void	ft_rotate(t_node *lst) //funciona pero no es eso lo que tiene que hacer
 {
 	t_node	*aux;
-	t_node	*first;
+	t_node	*rec;
 	long	swap;
 
 	aux = lst;
-	first = lst;
+	rec = lst;
 	lst = lst->next;
 	
-	ft_lstdelone(lst);
+	swap = lst->data;
+	while (rec->next)
+		rec = rec->next;
+	
+	lst->data = rec->data;
 	while (lst->next)
 		lst = lst->next;
-	ft_lstadd_back(lst, first);
+	lst->data = swap;
 	
 	lst = aux;
 }
-
-/* void	ft_rev_rotate(t_node *lst)
-{
-	
-} */
