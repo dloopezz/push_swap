@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 16:48:10 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:54:22 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	ft_rotate(t_node *lst)
 	t_node	*aux;
 	long	swap;
 
-	
+ hola	
 }
