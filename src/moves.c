@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 18:48:54 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:25:59 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,37 @@
 
 void	ft_swap(t_node *lst)
 {
-	t_node	*aux;
+	t_node	*head;
 	long	swap;
 
-	aux = lst; //guardar primer nodo
-	lst = lst->next; //avanzar uno para saltar el 0 del principio
+	head = lst; //guardar primer nodo
 	swap = lst->data;
 	lst->data = lst->next->data;
 	lst->next->data = swap;
-	lst = aux; //reasignar a primer nodo
+	lst = head; //reasignar a primer nodo
 }
 
-void	ft_rotate(t_node *lst) //funciona pero no es eso lo que tiene que hacer
+void	ft_rotate(t_node **lst)
 {
-	t_node	*aux;
-	t_node	*rec;
-	long	swap;
+	t_node	*head;
 
-	aux = lst;
-	rec = lst;
-	lst = lst->next;
-	
-	swap = lst->data;
-	while (rec->next)
-		rec = rec->next;
-	
-	lst->data = rec->data;
-	while (lst->next)
-		lst = lst->next;
-	lst->data = swap;
-	
-	lst = aux;
+	head = *lst;
+	*lst = (*lst)->next;
+	lstadd_back_ps(lst, head);
+	head->next = NULL;
+}
+
+void	ft_rev_rotate(t_node **lst)
+{
+	t_node	*tail;
+	t_node	*aux;
+
+	tail = lstlast_ps(*lst);
+
+	aux = *lst;
+	while (aux->next->next)
+		aux = aux->next;
+	aux->next = NULL; //para que no se haga circular
+
+	lstadd_front_ps(lst, tail);	
 }

@@ -27,11 +27,10 @@ all: $(NAME)
 
 #bonus: make_libft $(NAME_BONUS)
 
-$(NAME): 
+$(NAME): $(OBJS)
 	$(YELLOW) "compiling libft..." $(RESET)
 	@make all -sC ./libft
 	$(YELLOW) "compiling push_swap..." $(RESET)
-	@make -s $(OBJS)
 	@$(CC) $(CFLAGS) $(DEBUG) $(OBJS) -I $(LIB) $(LIBFT) -o $(NAME)
 	$(GREEN) "push_swap compiled!!" $(RESET)
 
@@ -76,7 +75,8 @@ ROSE    = @echo "\x1B[38;2;255;151;203m"
 LBLUE   = @echo "\x1B[38;2;53;149;240m"
 LGREEN  = @echo "\x1B[38;2;17;245;120m"
 GRAY    = @echo "\x1B[38;2;176;174;174m"
-#RESET   = @echo "\x1b[0m"
+RESET 	= "\033[1;0m"
+
 #===Color background code===
 BG_BLACK   = @echo "\x1B[40m"
 BG_RED     = @echo "\x1B[41m"

@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/03 17:52:26 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:35:48 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ void	read_list(t_node *stack_a)
 {
 	t_node	*aux;
 
-	aux = stack_a->next; //para que no salga primer 0
+
+	//aux = stack_a->next; //para que no salga primer 0
+	aux = stack_a;
 	while (aux)
 	{
 		printf("Node content: %li\n", aux->data);
@@ -48,6 +50,7 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
+	// t_node	*aux;
 
 	stack_a = ft_calloc(1, sizeof(t_node));
 	stack_b = ft_calloc(1, sizeof(t_node));
@@ -56,11 +59,16 @@ int	main(int argc, char **argv)
 		ft_parsing(argv, stack_a);
 		check_doubles(stack_a);
 		
+		// aux = stack_a;
+		stack_a = stack_a->next; //para que no salga primer 0
 		ft_putstr_fd("BEFORE ROTATE:\n", 1);
 		read_list(stack_a);
-		ft_rotate(stack_a);
+		ft_rev_rotate(&stack_a);
+		// ft_swap(stack_a);
 		ft_putstr_fd("\nAFTER ROTATE:\n", 1);
 		read_list(stack_a);
+		// ft_putstr_fd("\nAUX:\n", 1);
+		// read_list(aux);
 
 		return (0);
 	}
@@ -70,11 +78,3 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 }
-
-/* 		
-SWAP:
-		ft_putstr_fd("BEFORE SWAP:\n", 1);
-		read_list(stack_a);
-		ft_putstr_fd("\nAFTER SWAP:\n", 1);
-		ft_swap(stack_a); 
-*/
