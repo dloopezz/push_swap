@@ -6,12 +6,13 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 12:52:21 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:43:09 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//FALLOS CUANDO STACK B NO EXISTE
 void	ft_swap(t_node *lst)
 {
 	t_node	*head;
@@ -40,12 +41,10 @@ void	ft_rev_rotate(t_node **lst)
 	t_node	*aux;
 
 	tail = lstlast_ps(*lst);
-
 	aux = *lst;
 	while (aux->next->next)
 		aux = aux->next;
 	aux->next = NULL; //recorremos la lista hasta el penúltimo (que ahora es el último) y le decimos que después se acaba para que no se haga circular
-
 	lstadd_front_ps(lst, tail);	
 }
 

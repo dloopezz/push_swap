@@ -14,6 +14,8 @@ SRC =	push_swap.c\
 		parsing.c\
 		utils.c\
 		moves.c\
+		list_utils.c\
+		write_moves.c\
 
 #SRC_BONUS =	main_bonus.c\
 
