@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/04 18:35:48 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:53:06 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,21 @@ int	main(int argc, char **argv)
 		ft_parsing(argv, stack_a);
 		check_doubles(stack_a);
 		
-		// aux = stack_a;
 		stack_a = stack_a->next; //para que no salga primer 0
-		ft_putstr_fd("BEFORE ROTATE:\n", 1);
+		stack_b = stack_b->next; //para que no salga primer 0
+		
+		ft_putstr_fd("BEFORE PUSH:\n", 1);
+		ft_putstr_fd("STACK A:\n", 1);
 		read_list(stack_a);
-		ft_rev_rotate(&stack_a);
-		// ft_swap(stack_a);
-		ft_putstr_fd("\nAFTER ROTATE:\n", 1);
+		ft_putstr_fd("STACK B:\n", 1);
+		read_list(stack_b);
+		
+		ft_push(&stack_a, &stack_b);
+		ft_putstr_fd("\nAFTER PUSH:\n", 1);
+		ft_putstr_fd("STACK A:\n", 1);
 		read_list(stack_a);
-		// ft_putstr_fd("\nAUX:\n", 1);
-		// read_list(aux);
-
+		ft_putstr_fd("STACK B:\n", 1);
+		read_list(stack_b);
 		return (0);
 	}
 	else

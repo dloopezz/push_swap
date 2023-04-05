@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/04 18:37:44 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:23:53 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void		ft_rev_rotate(t_node **lst);
 void	lstadd_back_ps(t_node **lst, t_node *new);
 t_node	*lstlast_ps(t_node *lst);
 void	lstadd_front_ps(t_node **lst, t_node *new);
+void	ft_push(t_node **stack_a, t_node **stack_b);
 
 #endif

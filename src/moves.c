@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/04 19:25:59 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:52:21 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,22 @@ void	ft_rev_rotate(t_node **lst)
 	aux = *lst;
 	while (aux->next->next)
 		aux = aux->next;
-	aux->next = NULL; //para que no se haga circular
+	aux->next = NULL; //recorremos la lista hasta el penúltimo (que ahora es el último) y le decimos que después se acaba para que no se haga circular
 
 	lstadd_front_ps(lst, tail);	
+}
+
+void	ft_push(t_node **stack_a, t_node **stack_b)
+{
+	t_node	*aux;
+
+	aux = *stack_a;
+	*stack_a = (*stack_a)->next;
+	if (!(*stack_b))
+	{
+		lstadd_front_ps(stack_b, aux);
+		aux->next = NULL; //solo seteamos a NULL el siguiente cuando el que añadimos es el último, es decir, el del primer push
+	}
+	else
+		lstadd_front_ps(stack_b, aux);
 }
