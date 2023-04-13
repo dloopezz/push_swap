@@ -6,13 +6,13 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:32:22 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 17:49:49 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:12:53 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	write_swap(t_node *stack_a, t_node *stack_b, int check)
+void	do_swap(t_node *stack_a, t_node *stack_b, int check)
 {
 	if (check == SA)
 	{
@@ -40,7 +40,7 @@ void	write_swap(t_node *stack_a, t_node *stack_b, int check)
 	}
 }
 
-void	write_rotate(t_node **stack_a, t_node **stack_b, int check)
+void	do_rotate(t_node **stack_a, t_node **stack_b, int check)
 {
 	
 	if (check == RA)
@@ -69,7 +69,7 @@ void	write_rotate(t_node **stack_a, t_node **stack_b, int check)
 	}
 }
 
-void	write_rev_rotate(t_node **stack_a, t_node **stack_b, int check)
+void	do_rev_rotate(t_node **stack_a, t_node **stack_b, int check)
 {
 	if (check == RRA)
 	{
@@ -97,18 +97,18 @@ void	write_rev_rotate(t_node **stack_a, t_node **stack_b, int check)
 	}
 }
 
-void	write_push(t_node **stack_a, t_node **stack_b, int check)
+void	do_push(t_node **stack_a, t_node **stack_b, int check)
 {
 	if (check == PA)
 	{
-		if (!*stack_a || !(*stack_a)->next)
+		if (!*stack_a /* ||  !(*stack_a)->next */)
 			return ;
 		ft_push(stack_a, stack_b);
 		ft_putstr_fd("pa\n", 1);	
 	}
 	else if (check == PB)
 	{
-		if (!*stack_b || !(*stack_b)->next)
+		if (!*stack_b /* || !(*stack_b)->next */)
 			return ;
 		ft_push(stack_b, stack_a);
 		ft_putstr_fd("pb\n", 1);	

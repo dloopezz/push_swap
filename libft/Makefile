@@ -51,6 +51,7 @@ SRC = ft_atoi.c\
 			ft_lstmap.c\
 			free_mtx.c\
 			error_found.c\
+			ft_leaks.c\
 
 OBJS = $(SRC:.c=.o)
 

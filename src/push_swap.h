@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 17:32:49 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:54:50 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,29 @@ t_node		*add_node(t_node *stack_a, long num);
 void		ft_parsing(char **argv, t_node *stack_a);
 void		handle_string(char **arr, t_node *aux, long nb);
 long long	ft_atoi_ps(const char *str);
-void		read_list(t_node *stack_a);
 void		check_doubles(t_node *stack_a);
+int			check_ordered(t_node *stack_a);
 
 //MOVES
 void		ft_swap(t_node *lst);
-void		write_swap(t_node *stack_a, t_node *stack_b, int check);
+void		do_swap(t_node *stack_a, t_node *stack_b, int check);
 void		ft_rotate(t_node **lst);
-void		write_rotate(t_node **stack_a, t_node **stack_b, int check);
+void		do_rotate(t_node **stack_a, t_node **stack_b, int check);
 void		ft_rev_rotate(t_node **lst);
-void		write_rev_rotate(t_node **stack_a, t_node **stack_b, int check);
+void		do_rev_rotate(t_node **stack_a, t_node **stack_b, int check);
 void		ft_push(t_node **stack_a, t_node **stack_b);
-void		write_push(t_node **stack_a, t_node **stack_b, int check);
+void		do_push(t_node **stack_a, t_node **stack_b, int check);
+
+//ALGORYTHM
+void		choose_algorythm(t_node **stack_a, t_node **stack_b);
+void		algorythm3(t_node **stack_a, t_node **stack_b);
 
 
 //MY LIST FUNCTIONS
 t_node		*lstlast_ps(t_node *lst);
 void		lstadd_back_ps(t_node **lst, t_node *new);
 void		lstadd_front_ps(t_node **lst, t_node *new);
+void		read_list(t_node *stack_a);
+int			ft_listsize(t_node *stack_a);
 
 #endif

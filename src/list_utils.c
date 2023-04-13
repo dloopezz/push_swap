@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:15:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 13:19:04 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:44:37 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	read_list(t_node *stack_a)
 {
 	t_node	*aux;
 
-
-	//aux = stack_a->next; //para que no salga primer 0
 	aux = stack_a;
 	while (aux)
 	{
@@ -80,4 +78,19 @@ void	lstadd_front_ps(t_node **lst, t_node *new)
 	}
 	new -> next = *lst;
 	*lst = new;
+}
+
+int	ft_listsize(t_node *stack_a)
+{
+	t_node	*aux;
+	int	i;
+
+	i = 0;
+	aux = stack_a;
+	while (aux)
+	{
+		aux = aux->next;
+		i++;
+	}
+	return (i);
 }

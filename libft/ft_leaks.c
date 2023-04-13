@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_mtx.c                                         :+:      :+:    :+:   */
+/*   ft_leaks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 16:52:20 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/12 18:17:49 by dlopez-s         ###   ########.fr       */
+/*   Created: 2023/04/12 14:38:04 by dlopez-s          #+#    #+#             */
+/*   Updated: 2023/04/12 14:39:43 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_mtx(char **mtx)
+void	ft_leaks()
 {
-	int	i;
-
-	i = 0;
-	while (mtx[i])
-		free(mtx[i++]);
-	free(mtx);
+	system("leaks push_swap");
 }

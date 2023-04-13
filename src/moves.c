@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:00:00 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 17:43:09 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:58:09 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 //FALLOS CUANDO STACK B NO EXISTE
 void	ft_swap(t_node *lst)
 {
-	t_node	*head;
 	long	swap;
 
-	head = lst; //guardar primer nodo
 	swap = lst->data;
 	lst->data = lst->next->data;
 	lst->next->data = swap;
-	lst = head; //reasignar a primer nodo
 }
 
 void	ft_rotate(t_node **lst)
@@ -54,6 +51,7 @@ void	ft_push(t_node **stack_a, t_node **stack_b)
 
 	aux = *stack_a;
 	*stack_a = (*stack_a)->next;
+	// ft_putstr_fd("entra\n", 1);
 	if (!(*stack_b))
 	{
 		lstadd_front_ps(stack_b, aux);

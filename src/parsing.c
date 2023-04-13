@@ -6,11 +6,28 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:31:41 by lopezz            #+#    #+#             */
-/*   Updated: 2023/03/31 13:43:04 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:50:15 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_ordered(t_node *stack_a)
+{
+	t_node *comp;
+	t_node *cur;
+	
+	cur = stack_a;
+	comp = stack_a->next;
+	while (comp)
+	{
+		if (cur->data > comp->data)
+			return (0);
+		cur = cur->next;
+		comp = comp->next;
+	}
+	return (1);
+}
 
 void	check_doubles(t_node *stack_a)
 {
@@ -53,6 +70,7 @@ void	ft_parsing(char **argv, t_node *stack_a)
 	t_node	*aux;
 
 	aux = stack_a;
+	
 	i = 1;
 	while (argv[i])
 	{
@@ -66,5 +84,7 @@ void	ft_parsing(char **argv, t_node *stack_a)
 		else
 			handle_string(arr, aux, nb);
 		i++;
+		free_mtx(arr);
 	}
+	// free(aux);
 }
