@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:15:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/13 17:44:37 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:07:11 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ t_node	*add_node(t_node *stack_a, long num)
 	return (stack_a);
 }
 
-void	read_list(t_node *stack_a)
+void	read_list(t_node *stack)
 {
 	t_node	*aux;
 
-	aux = stack_a;
+	aux = stack;
 	while (aux)
 	{
 		printf("Node content: %li\n", aux->data);
@@ -80,17 +80,51 @@ void	lstadd_front_ps(t_node **lst, t_node *new)
 	*lst = new;
 }
 
-int	ft_listsize(t_node *stack_a)
+int	ft_listsize(t_node *stack)
 {
 	t_node	*aux;
 	int	i;
 
 	i = 0;
-	aux = stack_a;
+	aux = stack;
 	while (aux)
 	{
 		aux = aux->next;
 		i++;
 	}
 	return (i);
+}
+
+int	lst_getmin(t_node *stack)
+{
+	t_node *aux;
+	t_node *min;
+
+	aux = stack->next;
+	min = stack;
+	while (aux)
+	{
+		if (aux->data < min->data)
+			min = aux;
+		aux = aux->next;
+	}
+	// printf("\nMIN: %li\n", min->data);
+	return (min->data);
+}
+
+int	lst_getindex(long num, t_node *stack)
+{
+	t_node	*aux;
+	int		i;
+
+	i = 0;
+	aux = stack;
+	while (aux)
+	{
+		if (aux->data == num)
+			return (i);
+		aux = aux->next;
+		i++;
+	}
+	return (-1);
 }

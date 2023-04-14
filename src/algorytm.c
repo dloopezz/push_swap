@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:25:47 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/13 18:20:26 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:01:40 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,31 @@ void algorythm3(t_node **stack_a, t_node **stack_b)
 		do_rev_rotate(stack_a, stack_b, RRA);
 }
 
-void algorythm5(t_node **stack_a, t_node **stack_b)
+static void algorythm5(t_node **stack_a, t_node **stack_b)
 {
-	pene
+	int lst_size;
+	int min;
+
+	lst_size = ft_listsize(*stack_a);
+	while (lst_size > 3)
+	{
+		min = lst_getmin(*stack_a);
+		while (lst_getindex(min, *stack_a) != 0)
+		{
+			if (lst_getindex(min, *stack_a) < lst_size / 2)
+				do_rotate(stack_a, stack_b, RA);
+			else
+				do_rev_rotate(stack_a, stack_b, RRA);
+		}
+		if (lst_getindex(min, *stack_a) == 0)
+		{
+			do_push(stack_a, stack_b, PA);
+			lst_size = ft_listsize(*stack_a);
+		}
+	}
+	algorythm3(stack_a, stack_b);
+	do_push(stack_a, stack_b, PB);
+	do_push(stack_a, stack_b, PB);
 }
 
 void	choose_algorythm(t_node **stack_a, t_node **stack_b)
@@ -53,4 +75,6 @@ void	choose_algorythm(t_node **stack_a, t_node **stack_b)
 		algorythm3(stack_a, stack_b);
 	else if (lst_size == 5)
 		algorythm5(stack_a, stack_b);
+	// else
+	// 	algorythm
 }
