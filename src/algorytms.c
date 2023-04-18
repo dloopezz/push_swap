@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorytm.c                                         :+:      :+:    :+:   */
+/*   algorytms.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:25:47 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/14 16:01:40 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:13:32 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void algorythm3(t_node **stack_a, t_node **stack_b)
 		do_rev_rotate(stack_a, stack_b, RRA);
 }
 
-static void algorythm5(t_node **stack_a, t_node **stack_b)
+void algorythm5(t_node **stack_a, t_node **stack_b)
 {
 	int lst_size;
 	int min;
@@ -75,6 +75,6 @@ void	choose_algorythm(t_node **stack_a, t_node **stack_b)
 		algorythm3(stack_a, stack_b);
 	else if (lst_size == 5)
 		algorythm5(stack_a, stack_b);
-	// else
-	// 	algorythm
+	else
+	 	radix(stack_a, stack_b, lst_size);
 }

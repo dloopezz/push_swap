@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:15:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/14 13:07:11 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:08:04 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	read_list(t_node *stack)
 	while (aux)
 	{
 		printf("Node content: %li\n", aux->data);
+		// printf("Node content: %i\n", aux->index);
 		aux = aux->next;
 	}
 }
@@ -48,9 +49,9 @@ t_node	*lstlast_ps(t_node *lst)
 {
 	if (!lst)
 		return (0);
-	while (lst -> next)
+	while (lst->next)
 	{
-		lst = lst -> next;
+		lst = lst->next;
 	}
 	return (lst);
 }
@@ -64,7 +65,7 @@ void	lstadd_back_ps(t_node **lst, t_node *new)
 		*lst = new;
 		return ;
 	}
-	lstlast_ps (*lst)-> next = new;
+	lstlast_ps(*lst)->next = new;
 }
 
 void	lstadd_front_ps(t_node **lst, t_node *new)
@@ -76,14 +77,14 @@ void	lstadd_front_ps(t_node **lst, t_node *new)
 		*lst = new;
 		return ;
 	}
-	new -> next = *lst;
+	new->next = *lst;
 	*lst = new;
 }
 
 int	ft_listsize(t_node *stack)
 {
 	t_node	*aux;
-	int	i;
+	int		i;
 
 	i = 0;
 	aux = stack;
@@ -97,8 +98,8 @@ int	ft_listsize(t_node *stack)
 
 int	lst_getmin(t_node *stack)
 {
-	t_node *aux;
-	t_node *min;
+	t_node	*aux;
+	t_node	*min;
 
 	aux = stack->next;
 	min = stack;
@@ -110,6 +111,40 @@ int	lst_getmin(t_node *stack)
 	}
 	// printf("\nMIN: %li\n", min->data);
 	return (min->data);
+}
+
+int	lst_getmax(t_node *stack)
+{
+	t_node	*aux;
+	t_node	*max;
+
+	aux = stack->next;
+	max = stack;
+	while (aux)
+	{
+		if (aux->data > max->data)
+			max = aux;
+		aux = aux->next;
+	}
+	// printf("\nMAX: %li\n", max->data);
+	return (max->data);
+}
+
+int	lst_maxindex(t_node *stack)
+{
+	t_node	*aux;
+	t_node	*max;
+
+	aux = stack->next;
+	max = stack;
+	while (aux)
+	{
+		if (aux->index > max->index)
+			max = aux;
+		aux = aux->next;
+	}
+	// printf("\nMAX: %i\n", max->index);
+	return (max->index);
 }
 
 int	lst_getindex(long num, t_node *stack)
@@ -127,4 +162,26 @@ int	lst_getindex(long num, t_node *stack)
 		i++;
 	}
 	return (-1);
+}
+
+void	lst_setindex(t_node *stack)
+{
+	int		nb;
+	t_node	*aux;
+	t_node	*aux2;
+
+	nb = 0;
+	aux = stack;
+	while (aux)
+	{
+		nb = aux->data;
+		aux2 = stack;
+		while (aux2)
+		{
+			if (aux2->data >= nb)
+				aux2->index++;
+			aux2 = aux2->next;
+		}
+		aux = aux->next;
+	}
 }

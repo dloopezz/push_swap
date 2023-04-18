@@ -16,7 +16,8 @@ SRC =	push_swap.c\
 		moves.c\
 		list_utils.c\
 		write_moves.c\
-		algorytm.c\
+		algorytms.c\
+		radix.c\
 
 #SRC_BONUS =	main_bonus.c\
 

@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/14 16:01:08 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:12:56 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 			choose_algorythm(&stack_a, &stack_b);
 		else
 			printf("Ordered\n"); //este else se puede quitar luego
-		
+				
 		// read_list(stack_a);
 		return (0);
 	}
