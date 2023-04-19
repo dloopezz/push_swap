@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:31:41 by lopezz            #+#    #+#             */
-/*   Updated: 2023/04/19 17:21:36 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:23:33 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	check_ordered(t_node *stack_a)
 	{
 		if (cur->data > comp->data)
 		{
-			// printf("Cur data: %p\n", cur);
-			// printf("Cur data: %p\n", comp);
+
 			return (0);
 		}
 		cur = cur->next;
@@ -90,5 +89,4 @@ void	ft_parsing(char **argv, t_node *stack_a)
 		i++;
 		free_mtx(arr);
 	}
-	// free(aux);
 }
