@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/18 17:12:56 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:59:30 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	main(int argc, char **argv)
 		//8 leaks en parsing, otros leaks por avanzar stack_a al principio
 		ft_parsing(argv, stack_a);
 		check_doubles(stack_a);
-
 		stack_a = stack_a->next; //para que no salga primer 0
 		stack_b = stack_b->next; //para que no salga primer 0
-	
+
 		if (!check_ordered(stack_a))
+		{
+			// sleep(1000);
 			choose_algorythm(&stack_a, &stack_b);
-		else
-			printf("Ordered\n"); //este else se puede quitar luego
+		}
 				
 		// read_list(stack_a);
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:25:47 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/18 19:13:32 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:23:54 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void algorythm5(t_node **stack_a, t_node **stack_b)
 		}
 		if (lst_getindex(min, *stack_a) == 0)
 		{
-			do_push(stack_a, stack_b, PA);
+			do_push(stack_a, stack_b, PB);
 			lst_size = ft_listsize(*stack_a);
 		}
 	}
 	algorythm3(stack_a, stack_b);
-	do_push(stack_a, stack_b, PB);
-	do_push(stack_a, stack_b, PB);
+	do_push(stack_a, stack_b, PA);
+	do_push(stack_a, stack_b, PA);
 }
 
 void	choose_algorythm(t_node **stack_a, t_node **stack_b)
@@ -71,7 +71,9 @@ void	choose_algorythm(t_node **stack_a, t_node **stack_b)
 	int	lst_size;
 
 	lst_size = ft_listsize(*stack_a);
-	if (lst_size == 3)
+	if (lst_size == 2)
+		do_swap(*stack_a, *stack_b, SA);
+	else if (lst_size == 3)
 		algorythm3(stack_a, stack_b);
 	else if (lst_size == 5)
 		algorythm5(stack_a, stack_b);

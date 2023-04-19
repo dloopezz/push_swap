@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:15:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/18 19:08:04 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/19 15:18:48 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	read_list(t_node *stack)
 	aux = stack;
 	while (aux)
 	{
-		printf("Node content: %li\n", aux->data);
-		// printf("Node content: %i\n", aux->index);
+		printf("Node content, index: %li, ", aux->data);
+		printf("%i\n", aux->index);
 		aux = aux->next;
 	}
 }

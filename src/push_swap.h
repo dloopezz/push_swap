@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/18 19:13:45 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:22:32 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ void		choose_algorythm(t_node **stack_a, t_node **stack_b);
 void		algorythm3(t_node **stack_a, t_node **stack_b);
 void		algorythm5(t_node **stack_a, t_node **stack_b);
 void		radix(t_node **stack_a, t_node **stack_b, int lst_size);
-
+int			ft_itob(int nb);
+void		sort_numbers(t_node **stack_a, t_node **stack_b, int size);
 
 //MY LIST FUNCTIONS
 t_node		*lstlast_ps(t_node *lst);
@@ -79,6 +80,5 @@ int			lst_getmax(t_node *stack);
 int			lst_maxindex(t_node *stack);
 int			lst_getindex(long num, t_node *stack);
 void		lst_setindex(t_node *stack);
-
 
 #endif

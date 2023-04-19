@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
 	$(YELLOW) "compiling libft..." $(RESET)
 	@make all -sC ./libft
 	$(YELLOW) "compiling push_swap..." $(RESET)
-	@$(CC) $(CFLAGS) $(DEBUG) $(OBJS) -I $(LIB) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -I $(LIB) $(LIBFT) -o $(NAME)
 	$(GREEN) "push_swap compiled!!" $(RESET)
 
 #$(NAME_BONUS): $(OBJS_BONUS)
