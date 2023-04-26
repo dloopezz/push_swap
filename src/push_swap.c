@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:57:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/26 12:32:14 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:52:19 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	else
-	{
-		ft_putstr_fd("Invalid number of arguments\n", 2);
 		return (1);
-	}
 }
