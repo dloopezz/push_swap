@@ -15,6 +15,8 @@ SRC =	push_swap.c\
 		utils.c\
 		moves.c\
 		list_utils.c\
+		list_utils2.c\
+		list_utils3.c\
 		write_moves.c\
 		algorytms.c\
 		radix.c\

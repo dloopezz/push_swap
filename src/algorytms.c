@@ -6,13 +6,13 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:25:47 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/19 16:23:54 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:05:08 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void algorythm3(t_node **stack_a, t_node **stack_b)
+void	algorythm3(t_node **stack_a, t_node **stack_b)
 {
 	int	a;
 	int	b;
@@ -39,10 +39,10 @@ void algorythm3(t_node **stack_a, t_node **stack_b)
 		do_rev_rotate(stack_a, stack_b, RRA);
 }
 
-void algorythm5(t_node **stack_a, t_node **stack_b)
+void	algorythm5(t_node **stack_a, t_node **stack_b)
 {
-	int lst_size;
-	int min;
+	int	lst_size;
+	int	min;
 
 	lst_size = ft_listsize(*stack_a);
 	while (lst_size > 3)
@@ -78,5 +78,5 @@ void	choose_algorythm(t_node **stack_a, t_node **stack_b)
 	else if (lst_size == 5)
 		algorythm5(stack_a, stack_b);
 	else
-	 	radix(stack_a, stack_b, lst_size);
+		radix(stack_a, stack_b, lst_size);
 }

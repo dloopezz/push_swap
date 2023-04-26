@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:24:26 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/12 14:38:42 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:35:21 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,5 @@ char	*ft_strchr_gnl(char *s, int c);
 
 void	free_mtx(char **mtx);
 int		error_found(char *str);
-void	ft_leaks();
 
 #endif
-

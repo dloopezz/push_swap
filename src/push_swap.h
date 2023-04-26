@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/19 16:22:32 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:08:50 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void		handle_string(char **arr, t_node *aux, long nb);
 long long	ft_atoi_ps(const char *str);
 void		check_doubles(t_node *stack_a);
 int			check_ordered(t_node *stack_a);
+void		free_all(t_node *st_a, t_node *st_b, t_node *aux1, t_node *aux2);
 
 //MOVES
 void		ft_swap(t_node *stack);
@@ -80,5 +81,6 @@ int			lst_getmax(t_node *stack);
 int			lst_maxindex(t_node *stack);
 int			lst_getindex(long num, t_node *stack);
 void		lst_setindex(t_node *stack);
+void		free_lst(t_node *stack);
 
 #endif

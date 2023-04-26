@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 12:49:26 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/05 13:15:01 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:17:59 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ long long	ft_atoi_ps(const char *str)
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while(str[i] == SPACE)
+	while (str[i] == SPACE)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -35,9 +35,8 @@ long long	ft_atoi_ps(const char *str)
 		nb = (str[i++] - '0') + (nb * 10);
 	if ((str[i] < '0' || str[i] > '9') && str[i] && str[i] != SPACE)
 		error_found("Error\n");
-	nb *= sign; //meter en if de abajo
+	nb *= sign;
 	if (nb > INT_MAX || nb < INT_MIN)
 		error_found("Error\n");
 	return (nb);
 }
-

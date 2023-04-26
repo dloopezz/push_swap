@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:31:41 by lopezz            #+#    #+#             */
-/*   Updated: 2023/04/19 18:23:33 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:07:53 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	check_ordered(t_node *stack_a)
 {
-	t_node *comp;
-	t_node *cur;
-	
+	t_node	*comp;
+	t_node	*cur;
+
 	cur = stack_a;
 	comp = stack_a->next;
 	while (comp)
 	{
 		if (cur->data > comp->data)
 		{
-
 			return (0);
 		}
 		cur = cur->next;
@@ -44,7 +43,7 @@ void	check_doubles(t_node *stack_a)
 		while (aux2 != aux1 && aux2)
 		{
 			if (aux1->data == aux2->data)
-				error_found("Error (doubles)\n");
+				error_found("Error\n");
 			aux2 = aux2->next;
 		}
 		aux1 = aux1->next;
@@ -73,7 +72,6 @@ void	ft_parsing(char **argv, t_node *stack_a)
 	t_node	*aux;
 
 	aux = stack_a;
-	
 	i = 1;
 	while (argv[i])
 	{
