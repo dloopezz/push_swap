@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:31:41 by lopezz            #+#    #+#             */
-/*   Updated: 2023/04/26 12:07:53 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:43:03 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_parsing(char **argv, t_node *stack_a)
 	while (argv[i])
 	{
 		arr = ft_split(argv[i], SPACE);
-		if (!arr[1])
+		if (!arr[0] || !arr[1])
 		{
 			nb = ft_atoi_ps(argv[i]);
 			aux = add_node(aux, nb);

@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 12:49:26 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/26 12:51:37 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:38:50 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long long	ft_atoi_ps(const char *str)
 			sign *= -1;
 	}
 	if (((str[i] < '0' || str[i] > '9')) || ft_strlen(str) == 0
-		|| ft_strlen(str) > 11)
+		|| ft_strlen(str + i) > 11)
 		error_found("Error\n");
 	while (str[i] >= '0' && str[i] <= '9')
 		nb = (str[i++] - '0') + (nb * 10);
