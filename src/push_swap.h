@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:02:35 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/04/26 12:08:50 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:42:45 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void		sort_numbers(t_node **stack_a, t_node **stack_b, int size);
 t_node		*lstlast_ps(t_node *lst);
 void		lstadd_back_ps(t_node **lst, t_node *new);
 void		lstadd_front_ps(t_node **lst, t_node *new);
-void		read_list(t_node *stack);
 int			ft_listsize(t_node *stack);
 int			lst_getmin(t_node *stack);
 int			lst_getmax(t_node *stack);
